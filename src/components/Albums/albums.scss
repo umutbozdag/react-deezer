@@ -1,0 +1,15 @@
+.albums {
+  padding: 12px;
+  background: #252a34;
+
+  &__title {
+    margin-bottom: 32px;
+    font-size: 26px;
+    color: white;
+  }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

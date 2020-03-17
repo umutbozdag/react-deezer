@@ -1,0 +1,18 @@
+.search {
+  background: #2b2c3c;
+  display: flex;
+  align-items: center;
+
+  &__input {
+    border: none;
+    padding: 12px;
+    width: 300px;
+    outline: none;
+    background: #2b2c3c;
+  }
+
+  ::placeholder {
+    color: #646363;
+    display: none;
+  }
+}

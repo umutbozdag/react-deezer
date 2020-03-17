@@ -1,0 +1,8 @@
+.playlists {
+  width: 100%;
+  &__container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}

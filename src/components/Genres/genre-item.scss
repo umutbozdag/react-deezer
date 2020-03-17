@@ -1,0 +1,16 @@
+.genre {
+  .genre__content {
+    position: relative;
+
+    .genre__title {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      color: white;
+    }
+
+    .genre__cover {
+      width: 380px;
+    }
+  }
+}
