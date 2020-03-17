@@ -1,7 +1,7 @@
 export const initDeezer = () => {
   window.dzAsyncInit = function() {
     window.DZ.init({
-      appId: "400384",
+      appId: process.env.APP_ID,
       channelUrl: "http://localhost:3000/channel.html",
       player: {
         container: "player",
