@@ -43,19 +43,27 @@ export default function Nav(props) {
               <span>Genres</span>
             </Link>
           </li>
+          <li className="nav__item nav__search">
+            <Search />
+          </li>
           <li className="nav__item">
             {localStorage.getItem("user") === null ? (
-              <button name="buttonLogin" onClick={handleOnClick}>
+              <button
+                className="nav__button"
+                name="buttonLogin"
+                onClick={handleOnClick}
+              >
                 Login
               </button>
             ) : (
-              <button name="buttonLogout" onClick={handleOnClick}>
+              <button
+                className="nav__button"
+                name="buttonLogout"
+                onClick={handleOnClick}
+              >
                 Logout
               </button>
             )}
-          </li>
-          <li className="nav__item">
-            <Search />
           </li>
         </ul>
       </div>
