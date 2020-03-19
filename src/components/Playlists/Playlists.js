@@ -4,35 +4,32 @@ import "./playlists.scss";
 import { API_URL } from "../../utils/url";
 import PlaylistItem from "./PlaylistItem";
 import Loading from "../Loading";
+import { useDispatch, useSelector } from "react-redux";
+import { getTopPlaylists } from "../../redux/actions/apiActions";
 
 export default function Playlists(props) {
-  const [playlists, setPlaylists] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [playlists, setPlaylists] = useState([]);
+
+  const dispatch = useDispatch();
+  const playlists = useSelector(
+    state =>
+      state.playlistsReducer.playlists &&
+      state.playlistsReducer.playlists.data.data
+  );
+  console.log(playlists);
 
   useEffect(() => {
-    axios
-      .get(`${API_URL}/chart/0/playlists&limit=${props.count}`)
-      .then(result => {
-        console.log(result);
-        setPlaylists(result.data.data);
-        setLoading(false);
-      });
-  }, [props.count]);
+    dispatch(getTopPlaylists());
+  }, []);
 
   return (
     <div className="playlists">
-      {loading ? (
-        <div className="loading__container">
-          <Loading />
-        </div>
-      ) : (
-        <div className="playlists__container">
-          {playlists &&
-            playlists.map(playlist => (
-              <PlaylistItem playlist={playlist} key={playlist.id} />
-            ))}
-        </div>
-      )}
+      <div className="playlists__container">
+        {playlists &&
+          playlists.map(playlist => (
+            <PlaylistItem playlist={playlist} key={playlist.id} />
+          ))}
+      </div>
     </div>
   );
 }
