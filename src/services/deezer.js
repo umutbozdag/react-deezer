@@ -1,15 +1,15 @@
 export const initDeezer = () => {
   window.dzAsyncInit = function() {
     window.DZ.init({
-      appId: process.env.APP_ID,
-      channelUrl: "http://localhost:3000/channel.html",
-      player: {
-        container: "player",
-        width: 300,
-        height: 300,
-        format: "square",
-        onload: function() {}
-      }
+      appId: 400384,
+      channelUrl: "http://localhost:3000/channel.html"
+      // player: {
+      //   container: "player",
+      //   width: 300,
+      //   height: 300,
+      //   format: "classic",
+      //   onload: function() {}
+      // }
     });
   };
   (function() {
@@ -55,4 +55,9 @@ export const deezerLoginStatus = () => {
   //     console.log("User is NOT logged in");
   //   }
   // });
+};
+
+export const getUser = () => {
+  const user = localStorage.getItem("user");
+  return JSON.parse(user);
 };
