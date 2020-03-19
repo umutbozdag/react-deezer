@@ -1,11 +1,10 @@
 import React from "react";
 import "./search.scss";
-import SearchIcon from "@material-ui/icons/Search";
 
-export default function Search() {
+export default function Search(props) {
   return (
     <div className="search">
-      <SearchIcon style={{ color: "white", paddingLeft: 12 }} />
+      <i style={{ color: "white", paddingLeft: 12 }} class="fas fa-search"></i>
       <input className="search__input" type="search" placeholder="Search..." />
     </div>
   );
