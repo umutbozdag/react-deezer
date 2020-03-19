@@ -6,11 +6,12 @@ import "./app.scss";
 import Genres from "./components/Genres";
 import Browse from "./components/Browse/Browse";
 import PlaylistDetail from "./components/PlaylistDetail";
-import { initDeezer, deezerLoginStatus } from "./services/deezer";
+import { initDeezer, deezerLoginStatus, getUser } from "./services/deezer";
+import AlbumDetail from "./components/AlbumDetail/AlbumDetail";
+import ArtistDetail from "./components/ArtistDetail/ArtistDetail";
+import Player from "./components/Player/Player";
 
 function App() {
-  const [user, setUser] = useState({});
-
   useEffect(() => {
     initDeezer();
   }, []);
@@ -21,9 +22,6 @@ function App() {
         if (response.authResponse) {
           console.log("Welcome!  Fetching your information.... ");
           window.DZ.api("/user/me", function(response) {
-            console.log("Good to see you, " + response.name + ".");
-            console.log(response);
-            setUser(response);
             localStorage.setItem("user", JSON.stringify(response));
             window.location.reload();
           });
@@ -42,17 +40,23 @@ function App() {
           <Nav deezerLogin={deezerLogin} />
 
           <Switch>
-            {/* TODO: SEND USER PROPS TO OTHER COMPONENTS */}
+            <Route exact path="/" render={props => <Discover {...props} />} />
             <Route
               exact
-              path="/"
-              render={props => <Discover {...props} user={user} />}
+              path="/genres"
+              render={props => <Genres {...props} />}
             />
-            <Route exact path="/genres" component={Genres} />
-            <Route path="/browse" component={Browse} />
-            <Route path="/playlist/:id/tracks" component={PlaylistDetail} />
+            font-size: 14px;
+            <Route path="/browse" render={props => <Browse {...props} />} />
             <Route exact path="/playlist/:id" component={PlaylistDetail} />
+            <Route
+              exact
+              path="/album/:id"
+              render={props => <AlbumDetail {...props} />}
+            />
+            <Route exact path="/artist/:id" component={ArtistDetail} />
           </Switch>
+          <Player />
         </Router>
       </div>
     </div>
