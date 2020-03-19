@@ -6,9 +6,10 @@
   &__input {
     border: none;
     padding: 12px;
-    width: 300px;
+    color: white;
     outline: none;
     background: #2b2c3c;
+    min-width: 800px;
   }
 
   ::placeholder {

@@ -1,0 +1,52 @@
+.player {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+$rhap_theme-color: #5a4c4c; // Color of all buttons and volume/progress indicators
+$rhap_background-color: rgb(
+  70,
+  58,
+  58
+) !important; // Color of the player background
+$rhap_bar-color: #664343 !important; // Color of volume and progress bar
+$rhap_time-color: #333 !important; // Font color of current time and duration
+$rhap_font-family: inherit; // Font family of current time and duration
+
+// .player {
+//   background: #191d24;
+//   position: fixed;
+//   bottom: 0;
+//   width: 100%;
+//   height: 70px;
+//   .player__container {
+//     display: flex;
+//     align-items: center;
+//     height: 100%;
+//   }
+//   &__content {
+//   }
+
+//   &__controls {
+//     margin-left: 32px;
+//   }
+
+//   .control__button {
+//     background: 0;
+//     border: 0;
+//     color: white;
+//     font-size: 24px;
+//     cursor: pointer;
+//     outline: 0;
+//     &:hover {
+//       color: #c2c2c2;
+//     }
+//   }
+
+//   .control__button--play {
+//     font-size: 28px;
+//     padding: 12px;
+//   }
+// }
