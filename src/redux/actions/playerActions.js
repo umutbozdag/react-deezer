@@ -20,3 +20,11 @@ export function setActiveSound(sound) {
     payload: sound
   };
 }
+
+export function setPlaylist(playlist) {
+  // Array
+  return {
+    type: actionTypes.SET_PLAYLIST,
+    payload: playlist
+  };
+}
