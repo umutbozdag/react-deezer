@@ -7,11 +7,7 @@ export default function PlaylistItem(props) {
     <div className="playlist">
       <div className="playlist__container">
         <div className="playlist__content">
-          <LazyLoadImage
-            alt=""
-            src={props.playlist.picture_xl} // use normal <img> attributes as props
-            width={300}
-          />
+          <LazyLoadImage alt="" src={props.playlist.picture_xl} width={300} />
           <h3>{props.playlist.title}</h3>
         </div>
       </div>
