@@ -1,69 +1,74 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./nav.scss";
-import Search from "../Search";
-import { deezerLogout } from "../../services/deezer";
+import { playTracks, playPlaylists } from "../../services/deezer-player";
+import { changeTheme } from "../../utils/helpers";
 
-export default function Nav(props) {
-  const [user, setUser] = useState({});
-  const [message, setMessage] = useState("");
-
-  const handleOnClick = e => {
-    console.log(e);
-    if (e.target.name == "buttonLogin") {
-      props.deezerLogin();
-
-      // setUser()
-    } else {
-      deezerLogout();
-      localStorage.removeItem("user");
-      window.location.reload();
-    }
-  };
-
+export default function Nav() {
   return (
     <div className="nav">
+      {/* <li className="nav__item nav__item--brand">
+        <div className="brand__container">
+          <img
+            className="nav__brand"
+            src="https://srv-file6.gofile.io/download/5Xp9re/580b57fcd9996e24bc43c51b.png"
+            alt=""
+          />
+        </div>
+      </li> */}
+
       <div className="nav__container">
         <ul className="nav__items">
+          <h3 className="nav__title">Discover</h3>
+
           <li className="nav__item">
-            <Link className="nav__link nav__link--big" to="/">
-              <span>Home</span>
+            <Link className="nav__link" to="/">
+              <ion-icon name="home-outline"></ion-icon> <span>Home</span>
             </Link>
           </li>
           <li className="nav__item">
             <Link className="nav__link" to="/browse">
-              <span>Browse</span>
+              <ion-icon name="compass-outline"></ion-icon> <span>Browse</span>
             </Link>
           </li>
           <li className="nav__item">
-            <Link
-              className="nav__link"
-              to={{ pathname: "/genres", state: { user: user } }}
-            >
+            <Link className="nav__link">
+              <ion-icon name="radio-outline"></ion-icon> <span>Radio</span>
+            </Link>
+          </li>
+          <li className="nav__item">
+            <Link className="nav__link" to="/favorites">
+              <ion-icon name="heart-outline"></ion-icon>
+              <span>Favorites</span>
+            </Link>
+          </li>
+
+          <h3 className="nav__title">Your library</h3>
+          {/* <li className="nav__item">
+            <Link className="nav__link" to="/genres">
+              <i class="fas fa-record-vinyl nav__icon"></i>
               <span>Genres</span>
             </Link>
-          </li>
-          <li className="nav__item nav__search">
-            <Search />
-          </li>
+          </li> */}
+
           <li className="nav__item">
-            {localStorage.getItem("user") === null ? (
-              <button
-                className="nav__button"
-                name="buttonLogin"
-                onClick={handleOnClick}
-              >
-                Login
-              </button>
-            ) : (
-              <button
-                className="nav__button"
-                name="buttonLogout"
-                onClick={handleOnClick}
-              >
-                Logout
-              </button>
-            )}
+            <Link className="nav__link">
+              <ion-icon name="person-outline"></ion-icon>
+              <span>Artists</span>
+            </Link>
+          </li>
+
+          <li className="nav__item">
+            <Link className="nav__link">
+              <ion-icon name="musical-notes-outline"></ion-icon>
+              <span>Songs</span>
+            </Link>
+          </li>
+
+          <li className="nav__item">
+            <Link className="nav__link">
+              <ion-icon name="albums-outline"></ion-icon> <span>Album</span>
+            </Link>
           </li>
         </ul>
       </div>
