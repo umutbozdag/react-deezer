@@ -1,4 +1,19 @@
 .browse {
-  background: black;
+  margin-left: 250px;
   height: 100vh;
+  .browse__nav {
+    border-bottom: 1px solid gray;
+    padding: 24px;
+    width: 100%;
+    &__items {
+    }
+    &__item {
+      margin-left: 12px;
+      color: white;
+      text-decoration: none;
+      &:hover {
+        background: red;
+      }
+    }
+  }
 }

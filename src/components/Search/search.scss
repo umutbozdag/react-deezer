@@ -1,19 +1,27 @@
+@import "../../variables.scss";
 .search {
-  background: #2b2c3c;
   display: flex;
   align-items: center;
-
+  background: var(--main-screen-bg);
   &__input {
     border: none;
-    padding: 12px;
-    color: white;
+    padding: 22px;
     outline: none;
-    background: #2b2c3c;
-    min-width: 800px;
+    background: var(--main-screen-bg);
+    font-size: 17px;
+    width: 900px;
+    color: var(--input-color);
+    &:hover {
+    }
+  }
+
+  ion-icon {
+    color: var(--icon-color);
+    padding-left: 24px;
+    font-size: 24px;
   }
 
   ::placeholder {
-    color: #646363;
-    display: none;
+    color: var(--placeholder-color);
   }
 }

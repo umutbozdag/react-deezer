@@ -1,0 +1,32 @@
+@import "../../variables.scss";
+.app__header {
+  border-bottom: 1px solid $header-bottom-color;
+  margin-left: 250px;
+  &__container {
+    display: flex;
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__item:nth-child(2) {
+    margin-left: auto;
+    margin-right: 48px;
+  }
+
+  .nav__button {
+    padding: 9px 32px;
+    border: 2px solid #686599;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #635f8f;
+    font-size: 17px;
+    cursor: pointer;
+    outline: 0;
+    &:hover {
+    }
+  }
+}

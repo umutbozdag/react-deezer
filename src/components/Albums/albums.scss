@@ -1,15 +1,67 @@
-.albums {
-  padding: 12px;
-  background: #252a34;
+@import "../../variables.scss";
 
-  &__title {
-    margin-bottom: 32px;
-    font-size: 26px;
+.albums {
+  padding-top: 32px;
+  position: relative;
+
+  &__loading {
+    text-align: center;
+    font-size: 32px;
     color: white;
+    display: flex;
+    justify-content: center;
+  }
+  &__title {
+    margin-bottom: 48px;
+    font-size: 28px;
+    color: var(--nav-link-color);
   }
   &__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
+  }
+
+  &__content {
+    margin-bottom: 10%;
+  }
+
+  .scroll-menu-arrow {
+    padding: 20px;
+    cursor: pointer;
+  }
+
+  ion-icon {
+    color: var(--arrow-icon-color);
+    font-size: 26px;
+    padding-top: 32px;
+  }
+
+  .horizontal-menu {
+    width: 1500px !important;
+  }
+
+  .arrow-prev {
+    margin-right: 32px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
+
+  .menu-item-wrapper.active {
+    border: 1px blue solid;
+  }
+  .menu-item.active {
+    border: 1px green solid;
+  }
+
+  .arrow-next {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
+
+  .arrow-next .menu-wrapper {
+    width: 800px !important;
   }
 }

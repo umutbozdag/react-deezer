@@ -1,23 +1,25 @@
+@import "../../variables.scss";
 .nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6px 0;
-  background: #1c212c;
-  box-shadow: 0px 0px 8px 0.5px rgba(0, 0, 0, 0.479);
-  height: 50px;
+  border-right: 1px solid $header-bottom-color;
+  background: var(--nav-bg);
+  position: fixed;
+  left: 0;
+  height: 100%;
   &__container {
-    width: 100%;
-
-    box-shadow: 0px 0px 8px 0.5px rgba(0, 0, 0, 0.479);
-    background: #1c212c;
+    width: 250px;
+    margin-top: 32px;
+    .nav__brand {
+      margin-left: -16px;
+    }
 
     .nav__items {
       display: flex;
-      align-items: center;
-      padding: 0;
-      margin: 0;
-
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 32px;
+      .nav__item--brand {
+        padding: 0;
+      }
       .nav__item {
         list-style: none;
         text-decoration: none;
@@ -25,45 +27,53 @@
         &:hover .nav__link {
           color: #dad4d4;
         }
-        &:nth-child(4) {
-          margin-left: auto;
-          margin-right: 12px;
-        }
-
-        &:nth-child(2),
-        &:nth-child(3) {
-          margin-left: 24px;
-        }
 
         .nav__link {
-          color: white;
+          color: var(--nav-link-color);
           text-decoration: none;
           font-size: 18px;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          align-items: center;
+        }
 
-          &--big {
-            font-size: 22px;
-          }
+        span {
+          font-weight: 200;
         }
       }
     }
-    .nav__button {
-      padding: 9px 20px;
-      background: #2b2c3c;
-      border: none;
-      color: white;
-      font-size: 14px;
-      cursor: pointer;
-      outline: 0;
-      &:hover {
-        background: #2f343f;
-      }
+    ion-icon {
+      color: var(--nav-link-color);
+      margin-right: 8px;
+      font-size: 22px;
     }
 
-    .nav__search {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      align-items: center;
+    .nav__title {
+      color: var(--nav-link-color);
+      margin-top: 24px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
     }
+  }
+
+  .nav__item--brand {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .nav__brand {
+    width: 150px;
+    object-fit: cover;
+    height: 70px;
+  }
+
+  .brand__container {
+    background: #393e5b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
   }
 }

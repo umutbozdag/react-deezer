@@ -1,0 +1,32 @@
+.top__playlist {
+  margin-top: 12px;
+  margin-bottom: 24px;
+  &__container {
+    position: relative;
+  }
+  &__cover {
+    width: 400px;
+    height: 150px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &__name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  ion-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    padding: 12px;
+  }
+}

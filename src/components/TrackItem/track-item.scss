@@ -1,0 +1,60 @@
+$margin-base: 24px;
+
+.track {
+  padding: 12px;
+  margin: 12px 0;
+  background: var(--track-bg-color);
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__artist__info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__artist__more {
+    margin-left: 12px;
+
+    .track__name {
+      margin-bottom: 12px;
+      color: var(--track-name-color);
+    }
+
+    .track__artist__name {
+      color: var(--artist-name-color);
+    }
+  }
+
+  &__position {
+  }
+  &__duration {
+    margin-left: auto;
+    margin-right: $margin-base;
+    color: var(--nav-link-color);
+  }
+
+  &__bottom__line {
+  }
+  &__play__button {
+    background: 0;
+    outline: 0;
+    cursor: pointer;
+    border: 0;
+    padding: 12px;
+    font-size: 24px;
+    color: white;
+  }
+  &__name {
+    color: var(--nav-link-color);
+  }
+
+  ion-icon {
+    color: var(--nav-link-color);
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 12px;
+  }
+}

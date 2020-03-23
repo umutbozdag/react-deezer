@@ -1,8 +1,9 @@
-.player {
+#player {
   position: fixed;
   bottom: 0;
   width: 100%;
   left: 0;
+  padding-top: 24px;
 }
 
 $rhap_theme-color: #5a4c4c; // Color of all buttons and volume/progress indicators
