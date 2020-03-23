@@ -1,23 +1,36 @@
 export const initDeezer = () => {
-  window.dzAsyncInit = function() {
+  window.dzAsyncInit = () => {
     window.DZ.init({
       appId: 400384,
-      channelUrl: "http://localhost:3000/channel.html"
-      // player: {
-      //   container: "player",
-      //   width: 300,
-      //   height: 300,
-      //   format: "classic",
-      //   onload: function() {}
-      // }
+      channelUrl: `http://localhost:3000/channel.html`,
+      player: {
+        container: "player",
+        width: 200,
+        height: 300,
+        onload: function(response) {
+          console.log("Player response:" + JSON.stringify(response));
+        }
+      }
+    });
+    window.DZ.ready(sdk_options => {
+      console.log(sdk_options);
+      window.DZ.getLoginStatus(response => {
+        if (response.status === "connected") {
+          window.DZ.api("/user/me", response => {
+            if (response.error) {
+              return;
+            }
+            console.log(response);
+          });
+        }
+      });
     });
   };
   (function() {
-    var e = document.createElement("script");
+    const e = document.createElement("script");
     e.src = "https://e-cdns-files.dzcdn.net/js/min/dz.js";
     e.async = true;
     document.getElementById("dz-root").appendChild(e);
-    console.log(document.getElementById("dz-root"));
   })();
 };
 
@@ -29,7 +42,6 @@ export const deezerLogin = () => {
         window.DZ.api("/user/me", function(response) {
           console.log("Good to see you, " + response.name + ".");
           console.log(response);
-          // setUser(response);
           localStorage.setItem("user", JSON.stringify(response));
         });
       } else {
@@ -46,15 +58,6 @@ export const deezerLogout = () => {
 
 export const deezerLoginStatus = () => {
   console.log(window.DZ);
-  // window.DZ.getLoginStatus(function(response) {
-  //   if (response.authResponse) {
-  //     console.log("User is logged in");
-  //     // logged in and connected user, someone you know
-  //   } else {
-  //     // no user session available, someone you dont know
-  //     console.log("User is NOT logged in");
-  //   }
-  // });
 };
 
 export const getUser = () => {
