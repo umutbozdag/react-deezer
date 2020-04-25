@@ -14,3 +14,9 @@ export const changeTheme = () => {
     html.classList.remove("dark");
   }
 };
+
+export const getCurrentTheme = () => {
+  const html = document.querySelector("html");
+
+  return html.classList.contains("light") ? "light" : "dark";
+};
