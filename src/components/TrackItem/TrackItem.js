@@ -1,43 +1,23 @@
 import React from "react";
 import "./track-item.scss";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  playTracks,
-  isPlaying,
-  pauseAudio,
-  playAudio
-} from "../../services/deezer-player";
 import { useState } from "react";
 
 export default function TrackItem(props) {
-  const activeSound = useSelector(state => state.playerReducer.activeSound);
+  const player = useSelector(state => state.playerReducer);
+  console.log(player.isPlaying);
   const dispatch = useDispatch();
-  const [iconName, setIconName] = useState("play-outline");
-  const setIconById = id => {};
 
-  const deneme = track => {
+  const [icon, setIcon] = useState("play-circle-outline");
+  const setTrack = track => {
     dispatch({ type: "SET_ACTIVE_SOUND", payload: track });
-    playTracks([track.id]);
-
-    if (window.DZ.player.isPlaying()) {
-      window.DZ.player.pause();
+    if (player.isPlaying) {
+      setIcon("pause-circle-outline");
     } else {
-      window.DZ.player.play();
+      setIcon("play-circle-outline");
     }
-    // if (window.DZ.player.getCurrentIndex() == null) {
-    //   playTracks([track.id]);
-    // } else if (
-    //   !window.DZ.player.isPlaying() &&
-    //   window.DZ.player.getCurrentIndex() != null
-    // ) {
-    //   playAudio();
-    // } else if (
-    //   window.DZ.player.isPlaying() &&
-    //   window.DZ.player.getCurrentIndex() != null
-    // ) {
-    //   pauseAudio();
-    // }
   };
+
   return (
     <div className="track">
       <div className="track__container">
@@ -55,10 +35,11 @@ export default function TrackItem(props) {
         <p className="track__duration">
           0{(props.track.duration / 60).toFixed(2)}
         </p>
+
         <ion-icon
           role="button"
-          onClick={() => deneme(props.track)}
-          name={props.iconName}
+          onClick={() => setTrack(props.track)}
+          name={icon}
         ></ion-icon>
 
         <ion-icon name="heart-outline"></ion-icon>
