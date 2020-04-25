@@ -1,15 +1,15 @@
 import * as actionTypes from "./actionTypes";
 
-export function playSound() {
+export function onSoundPlay() {
   return {
-    type: actionTypes.PLAY_SOUND,
+    type: actionTypes.ON_SOUND_PLAY,
     payload: true
   };
 }
 
-export function pauseSound() {
+export function onSoundPause() {
   return {
-    type: actionTypes.PAUSE_SOUND,
+    type: actionTypes.ON_SOUND_PAUSE,
     payload: false
   };
 }

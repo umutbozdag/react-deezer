@@ -6,7 +6,7 @@ const initialState = {
 
 export const playerReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.PLAY_SOUND:
+    case actionTypes.ON_SOUND_PLAY:
       return {
         ...state,
         isPlaying: action.payload
@@ -16,7 +16,7 @@ export const playerReducer = (state = initialState, action) => {
         ...state,
         activeSound: action.payload
       };
-    case actionTypes.PAUSE_SOUND:
+    case actionTypes.ON_SOUND_PAUSE:
       return {
         ...state,
         isPlaying: action.payload

@@ -1,5 +1,5 @@
-export const PLAY_SOUND = "PLAY_SOUND";
-export const PAUSE_SOUND = "PAUSE_SOUND";
+export const ON_SOUND_PLAY = "PLAY_SOUND";
+export const ON_SOUND_PAUSE = "PAUSE_SOUND";
 export const SET_ACTIVE_SOUND = "SET_ACTIVE_SOUND";
 export const SET_PLAYLIST = "SET_PLAYLIST";
 
