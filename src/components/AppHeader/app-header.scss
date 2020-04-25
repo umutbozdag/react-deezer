@@ -29,4 +29,10 @@
     &:hover {
     }
   }
+
+  ion-icon {
+    font-size: 24px;
+    color: var(--nav-link-color);
+    cursor: pointer;
+  }
 }

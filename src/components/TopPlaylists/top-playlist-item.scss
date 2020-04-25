@@ -1,14 +1,13 @@
 .top__playlist {
   margin-top: 12px;
   margin-bottom: 24px;
+
   &__container {
     position: relative;
   }
   &__cover {
-    width: 400px;
-    height: 150px;
-    object-fit: cover;
-    object-position: top;
+    width: 300px;
+    height: 300px;
   }
 
   &__name {
