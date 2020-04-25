@@ -2,7 +2,7 @@ import React from "react";
 import Search from "../Search";
 import { deezerLogout } from "../../services/deezer";
 import "./app-header.scss";
-import { changeTheme } from "../../utils/helpers";
+import { changeTheme, getCurrentTheme } from "../../utils/helpers";
 
 export default function AppHeader(props) {
   const toggleTheme = () => {
@@ -44,9 +44,13 @@ export default function AppHeader(props) {
               </button>
             )}
           </div>
-
+          {console.log(getCurrentTheme())}
           <div className="app__header__item">
-            <button onClick={toggleTheme}>Dark Mode</button>
+            {getCurrentTheme() == "dark" ? (
+              <ion-icon onClick={toggleTheme} name="sunny-outline"></ion-icon>
+            ) : (
+              <ion-icon onClick={toggleTheme} name="moon-outline"></ion-icon>
+            )}
           </div>
         </div>
       </div>
