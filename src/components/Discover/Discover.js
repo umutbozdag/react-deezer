@@ -52,12 +52,9 @@ export default function Discover(props) {
           <AlbumsContainer />
           <div className="discover__tops">
             <TopTracksContainer />
-
-            <TopPlaylistsContainer
-              count={10}
-              shape="rectangle"
-              marginLeft="25%"
-            />
+            <div className="discover__top__playlists__container">
+              <TopPlaylistsContainer count={10} />
+            </div>
           </div>
         </div>
       </div>
