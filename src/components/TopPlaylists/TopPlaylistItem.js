@@ -32,7 +32,7 @@ export default function TopPlaylistItem(props) {
           alt=""
         />
         <p className="top__playlist__name">{props.playlist.title}</p>
-        {window.DZ.player.isPlaying() != undefined &&
+        {/* {window.DZ.player.isPlaying() != undefined &&
         window.DZ.player.isPlaying() ? (
           <ion-icon onClick name="pause-circle-outline"></ion-icon>
         ) : (
@@ -40,7 +40,7 @@ export default function TopPlaylistItem(props) {
             onClick={() => playTopPlaylist(props.playlist && props.playlist)}
             name="play-circle-outline"
           ></ion-icon>
-        )}
+        )} */}
       </div>
     </div>
   );
