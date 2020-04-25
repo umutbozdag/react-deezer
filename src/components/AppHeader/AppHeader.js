@@ -46,7 +46,7 @@ export default function AppHeader(props) {
           </div>
           {console.log(getCurrentTheme())}
           <div className="app__header__item">
-            {getCurrentTheme() == "dark" ? (
+            {getCurrentTheme() === "dark" ? (
               <ion-icon onClick={toggleTheme} name="sunny-outline"></ion-icon>
             ) : (
               <ion-icon onClick={toggleTheme} name="moon-outline"></ion-icon>
